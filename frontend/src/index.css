@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  body { @apply bg-gray-50 text-gray-800 font-sans; }
+}
+
+@layer components {
+  .card        { @apply bg-white rounded-xl shadow-sm border border-gray-100 p-5; }
+  .btn-primary { @apply bg-accent text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-600 transition-colors; }
+  .btn-ghost   { @apply text-gray-500 px-3 py-1.5 rounded-lg text-sm hover:bg-gray-100 transition-colors; }
+  .badge-ok      { @apply bg-green-100 text-green-700 text-xs font-semibold px-2 py-0.5 rounded-full; }
+  .badge-bajo    { @apply bg-yellow-100 text-yellow-700 text-xs font-semibold px-2 py-0.5 rounded-full; }
+  .badge-critico { @apply bg-orange-100 text-orange-700 text-xs font-semibold px-2 py-0.5 rounded-full; }
+  .badge-agotado { @apply bg-red-100 text-red-700 text-xs font-semibold px-2 py-0.5 rounded-full; }
+}
+
+.sidebar-link        { @apply flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-150 cursor-pointer; }
+.sidebar-link.active { @apply bg-accent text-white; }
+.sidebar-link:not(.active) { @apply text-gray-300 hover:bg-white/10 hover:text-white; }
+
+.custom-scrollbar::-webkit-scrollbar       { width: 5px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: #e5e7eb; border-radius: 10px; }
+.custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #d1d5db; }
+
+@keyframes modal-in {
+  from { opacity: 0; transform: scale(0.95) translateY(10px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+.animate-modal-in { animation: modal-in 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
